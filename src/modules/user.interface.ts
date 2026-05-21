@@ -3,5 +3,6 @@ export interface Iuser{
     age: number,
     email: string,
     password: number;
-    is_active?: boolean
+    is_active?: boolean;
+    role?:string
 }

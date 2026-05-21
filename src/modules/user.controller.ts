@@ -4,7 +4,7 @@ import { userService } from "./user.service";
 
 const createUser=async (req: Request, res: Response) => {
     //console.log(req.body)
-    const { user, email, password, age } = req.body;
+    const { user, email, password, age ,role} = req.body;
     try {
         const result=await userService.userIntoDB(req.body)
         // console.log(result);
@@ -24,6 +24,7 @@ const createUser=async (req: Request, res: Response) => {
 }
 
 const getAllusers=async (req: Request, res: Response) => {
+    console.log('From Controller', req.user)
 
     try {
         const result=await userService.getAllUsersFromDB();
